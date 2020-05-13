@@ -6,7 +6,12 @@ export class LandingPage extends Component{
     render(){
         return(
             <div>
-                ]
+                <nav>
+                    <li>fffff</li>
+                    <li>fffff</li>
+                    <li>fffff</li>
+                    <li>fffff</li>
+                </nav>
             </div>
         )
     }
