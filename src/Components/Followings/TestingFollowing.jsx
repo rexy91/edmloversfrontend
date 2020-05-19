@@ -8,7 +8,7 @@ class TestingFollowing extends Component{
                 <h5> Todos:</h5>
                 <ul>
                     <li>add profile page</li>
-                    <li></li>
+                    <li>add a button to follow a user</li>
                     <li></li>
                     <li></li>
                 </ul>
