@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Header, Image, Modal } from 'semantic-ui-react'
 
 const ModalLogin = () => (
-  <Modal trigger={<Button>Show Modal</Button>} centered={false}>
+  <Modal trigger={<Button>Login</Button>} centered={false}>
     <Modal.Header>Select a Photo</Modal.Header>
     <Modal.Content image>
       <Image wrapped size='medium' src='https://react.semantic-ui.com/images/avatar/large/rachel.png' />
