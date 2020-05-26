@@ -1,14 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Button, Header, Image, Modal, Form, Checkbox} from 'semantic-ui-react'
 
 
 
+const ModalLogin = () => {
 
-const handleOnchange = () => {
-  console.log('here')
-}
+  const [userName, setUsername] = useState( '' )
 
-const ModalLogin = () => (
+  const handleOnchange = (e) => {
+    
+    console.log(userName)
+  }
+
+
+
+  return(
   <Modal trigger={<Button>Login</Button>} centered={false}>
     <Modal.Header>Please Login</Modal.Header>
     <Modal.Content>
@@ -27,7 +33,7 @@ const ModalLogin = () => (
         <Button type='submit'>Submit</Button>
       </Form>
     </Modal.Content>
-  </Modal>
-)
+  </Modal>)
+}
 
 export default ModalLogin
