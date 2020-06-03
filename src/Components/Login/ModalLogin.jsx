@@ -1,12 +1,21 @@
 import React, {useState} from 'react'
 import { Button, Header, Image, Modal, Form, Checkbox} from 'semantic-ui-react'
 
-
-
 const ModalLogin = () => {
-
   const [userName, setUsername] = useState('')
   const [passWord, setPassword] = useState('')
+
+  fetch(`https://http//localhost:3000/users`, {
+    method:'POST',
+    headers:{
+      'Content-type':'application/json',
+      accept:'application/json'
+    },
+    body:JSON.stringify({
+      
+    })
+  })
+
 
   console.log(userName,passWord)
   return(
