@@ -5,21 +5,21 @@ const ModalLogin = () => {
   const [userName, setUsername] = useState('')
   const [passWord, setPassword] = useState('')
 
-  // fetch(`https://http//localhost:3000/users`, {
-  //   method:'POST',
-  //   headers:{
-  //     'Content-type':'application/json',
-  //     accept:'application/json'
-  //   },
-  //   body:JSON.stringify({
-  //     test:'testing'
-  //   })
-  //   .then(res => res.json())
-  //   .then(console.log)
-  // })
-
   const submitLogin = (e) => {
-    console.log('submitted')
+    
+    fetch(`https://http//localhost:3000/users`, {
+      method:'POST',
+      headers:{
+        'Content-type':'application/json',
+        accept:'application/json'
+      },
+      body:JSON.stringify({
+        test:'testing'
+      })
+      .then(res => res.json())
+      .then(console.log)
+    })
+
   }
 
   console.log(userName,passWord)
