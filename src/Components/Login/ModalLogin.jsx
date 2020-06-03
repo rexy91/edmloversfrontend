@@ -5,24 +5,29 @@ const ModalLogin = () => {
   const [userName, setUsername] = useState('')
   const [passWord, setPassword] = useState('')
 
-  fetch(`https://http//localhost:3000/users`, {
-    method:'POST',
-    headers:{
-      'Content-type':'application/json',
-      accept:'application/json'
-    },
-    body:JSON.stringify({
-      
-    })
-  })
+  // fetch(`https://http//localhost:3000/users`, {
+  //   method:'POST',
+  //   headers:{
+  //     'Content-type':'application/json',
+  //     accept:'application/json'
+  //   },
+  //   body:JSON.stringify({
+  //     test:'testing'
+  //   })
+  //   .then(res => res.json())
+  //   .then(console.log)
+  // })
 
+  const submitLogin = (e) => {
+    console.log('submitted')
+  }
 
   console.log(userName,passWord)
   return(
   <Modal trigger={<Button>Login</Button>} centered={false}>
     <Modal.Header>Please Login</Modal.Header>
     <Modal.Content>
-        <Form>
+        <Form onSubmit={submitLogin}>
         <Form.Field>
           <label>Username</label>
           <input placeholder='Username' name='username' onChange={ e => setUsername(e.target.value)} value={userName} />
