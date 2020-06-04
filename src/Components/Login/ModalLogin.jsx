@@ -7,22 +7,20 @@ const ModalLogin = () => {
 
   const submitLogin = (e) => {
     // console.log(e.target.username.value)
-    // e.preventDefault()
-    // fetch(`http://localhost:3000/users`, {
-    //   method:'POST',
-    //   headers: {
-    //     'content-type':'application/json',
-    //   },
-    //   body: JSON.stringify(
-    //     {
-    //       key1:'1',
-    //       key2:'2'
-    //     }
-    //   )
-    // })
-    // .then(res => res.json())
-    // .then(console.log)
-    fetch('http://localhost:3000/users')
+    e.preventDefault()
+    fetch(`http://localhost:3000/users`, {
+      method:'POST',
+      headers: {
+        'content-type':'application/json',
+         accept:'application/json'
+      },
+      body: JSON.stringify(
+        {
+          key1:'1',
+          key2:'2'
+        }
+      )
+    })
     .then(res => res.json())
     .then(console.log)
   }
