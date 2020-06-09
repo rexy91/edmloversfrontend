@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import { Button, Header, Image, Modal, Form, Checkbox} from 'semantic-ui-react'
 
-export class ModalSignup extends Component(){
+export class ModalSignup extends Component{
       
    render(){ return(
         <Modal trigger={<Button>Sign Up</Button>} centered={false}>
-          <Modal.Header>Please Login</Modal.Header>
+          <Modal.Header>Welcome</Modal.Header>
           <Modal.Content>
               <Form>
               <Form.Field>

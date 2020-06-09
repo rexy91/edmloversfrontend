@@ -10,8 +10,8 @@ export class LandingPage extends Component{
             <div>
                 <h1> Title gi</h1>
                 <h1> Landing Page</h1>
-                {/* <ModalLogin/> */}
-                {/* <ModalSignup/> */}
+                <ModalLogin/>
+                <ModalSignup/>
             </div>
         )
     }
