@@ -6,7 +6,8 @@ const ModalLogin = () => {
   const [passWord, setPassword] = useState('')
 
   const submitLogin = (e) => {
-    // console.log(e.target.username.value)
+    const username = e.target.username.value
+    const password = e.target.password.value
     e.preventDefault()
     fetch(`http://localhost:3000/users`, {
       method:'POST',
@@ -16,8 +17,8 @@ const ModalLogin = () => {
       },
       body: JSON.stringify(
         {
-          key1:'1',
-          key2:'2'
+          username,
+          password
         }
       )
     })
