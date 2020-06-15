@@ -2,6 +2,11 @@ import React, {Component} from 'react'
 import { Button, Header, Image, Modal, Form, Checkbox} from 'semantic-ui-react'
 
 export class ModalSignup extends Component{
+
+  state={
+    username:'',
+    password:''
+  }
       
    render(){ return(
         <Modal trigger={<Button>Sign Up</Button>} centered={false}>
@@ -19,7 +24,7 @@ export class ModalSignup extends Component{
               <Form.Field>
                 <Checkbox label='I agree to the Terms and Conditions' />
               </Form.Field>
-              <Button type='submit'>Submit</Button>
+              <Button type='submit'>Signup</Button>
             </Form>
           </Modal.Content>
         </Modal>
