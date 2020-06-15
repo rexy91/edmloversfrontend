@@ -7,6 +7,18 @@ export class ModalSignup extends Component{
     username:'',
     password:''
   }
+
+  // Class component function doenst need a identifier.
+  handleAllchange=(e)=>{
+    // set state as input changes.
+    console.log(e.target.name)
+    this.setState({
+      // state keys need to match inputs names to make this dynamic, to use one handleOnchangefunction.
+      // [e.name] will evulate depends on the input, then it matches the state key and set the value for the key.
+      // [] is es6 syntax to set key dynamically.
+      [e.target.name]:e.target.value
+    })
+  }
       
    render(){ return(
         <Modal trigger={<Button>Sign Up</Button>} centered={false}>
@@ -14,12 +26,16 @@ export class ModalSignup extends Component{
           <Modal.Content>
               <Form>
               <Form.Field>
-                <label>Username</label>
-                <input placeholder='Username' name='username' />
+                  <label>Username</label>
+                  <input placeholder='Username' name='username' 
+                    value={this.state.username}
+                    onChange={this.handleAllchange} />
               </Form.Field>
               <Form.Field>
-                <label>Password</label>
-                <input placeholder='Enter password' />
+                  <label>Password</label>
+                  <input placeholder='Enter password' name='password'
+                    value={this.state.username}
+                    onChange={this.handleAllchange} />
               </Form.Field>
               <Form.Field>
                 <Checkbox label='I agree to the Terms and Conditions' />
