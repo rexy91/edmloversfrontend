@@ -11,7 +11,7 @@ export class ModalSignup extends Component{
   // Class component function doenst need a identifier.
   handleAllchange=(e)=>{
     // set state as input changes.
-    console.log(e.target.name)
+    
     this.setState({
       // state keys need to match inputs names to make this dynamic, to use one handleOnchangefunction.
       // [e.name] will evulate depends on the input, then it matches the state key and set the value for the key.
@@ -21,7 +21,10 @@ export class ModalSignup extends Component{
   }
 
   submitSignup = (e) => {
-      console.log(e.target)
+    
+    const username = e.target.username.value
+    const password = e.target.password.value
+    console.log(username,password)
   }
       
    render(){ return(
