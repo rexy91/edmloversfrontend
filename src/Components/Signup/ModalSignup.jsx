@@ -19,12 +19,16 @@ export class ModalSignup extends Component{
       [e.target.name]:e.target.value
     })
   }
+
+  submitSignup = (e) => {
+      console.log(e.target)
+  }
       
    render(){ return(
         <Modal trigger={<Button>Sign Up</Button>} centered={false}>
           <Modal.Header>Welcome</Modal.Header>
           <Modal.Content>
-              <Form>
+              <Form onSubmit={this.submitSignup}>
               <Form.Field>
                   <label>Username</label>
                   <input placeholder='Username' name='username' 
