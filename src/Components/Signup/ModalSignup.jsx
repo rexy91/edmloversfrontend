@@ -11,7 +11,17 @@ export class ModalSignup extends Component{
   // Class component function doenst need a identifier.
   handleAllchange=(e)=>{
     // set state as input changes.
-    
+    fetch(`http://localhost:3000/users`,{
+      headers:{
+        'content-type':'application/json',
+        accept:'application/json'
+      },
+      body:JSON.stringify({
+          test:'test'
+      })
+      .then(res => res.json())
+      .then(console.log())
+    })
     this.setState({
       // state keys need to match inputs names to make this dynamic, to use one handleOnchangefunction.
       // [e.name] will evulate depends on the input, then it matches the state key and set the value for the key.
