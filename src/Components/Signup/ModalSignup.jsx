@@ -8,20 +8,10 @@ export class ModalSignup extends Component{
     password:''
   }
 
+
   // Class component function doenst need a identifier.
   handleAllchange=(e)=>{
     // set state as input changes.
-    fetch(`http://localhost:3000/users`,{
-      headers:{
-        'content-type':'application/json',
-        accept:'application/json'
-      },
-      body:JSON.stringify({
-          test:'test'
-      })
-      .then(res => res.json())
-      .then(console.log())
-    })
     this.setState({
       // state keys need to match inputs names to make this dynamic, to use one handleOnchangefunction.
       // [e.name] will evulate depends on the input, then it matches the state key and set the value for the key.
@@ -31,10 +21,24 @@ export class ModalSignup extends Component{
   }
 
   submitSignup = (e) => {
-    
+    e.preventDefault()
     const username = e.target.username.value
     const password = e.target.password.value
-    console.log(username,password)
+    fetch(`http://localhost:3000/users`, {
+      method:'POST',
+      headers: {
+        'content-type':'application/json',
+         accept:'application/json'
+      },
+      body: JSON.stringify(
+        {
+          username,
+          password
+        }
+      )
+    })
+    .then(res => res.json())
+    .then(console.log)
   }
       
    render(){ return(
@@ -50,8 +54,8 @@ export class ModalSignup extends Component{
               </Form.Field>
               <Form.Field>
                   <label>Password</label>
-                  <input placeholder='Enter password' name='password'
-                    value={this.state.username}
+                  <input placeholder='Enter password' name='password' type='password'
+                    value={this.state.password}
                     onChange={this.handleAllchange} />
               </Form.Field>
               <Form.Field>
