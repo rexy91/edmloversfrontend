@@ -9,7 +9,7 @@ const ModalLogin = () => {
     const username = e.target.username.value
     const password = e.target.password.value
     e.preventDefault()
-    fetch(`http://localhost:3000/users`, {
+    fetch(`http://localhost:3000/login`, {
       method:'POST',
       headers: {
         'content-type':'application/json',
@@ -23,7 +23,14 @@ const ModalLogin = () => {
       )
     })
     .then(res => res.json())
-    .then(console.log)
+    .then(respond => {
+      if (respond.error){
+        alert(respond.error)
+      }
+      else{
+        console.log(respond)
+      }
+    })
   }
 
   return(

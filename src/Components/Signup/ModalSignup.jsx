@@ -52,6 +52,7 @@ export class ModalSignup extends Component{
                     value={this.state.username}
                     onChange={this.handleAllchange} />
               </Form.Field>
+              
               <Form.Field>
                   <label>Password</label>
                   <input placeholder='Enter password' name='password' type='password'
