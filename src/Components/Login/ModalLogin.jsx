@@ -28,7 +28,8 @@ const ModalLogin = () => {
         alert(respond.error)
       }
       else{
-        console.log(respond)
+        // redux to store user
+        
       }
     })
   }

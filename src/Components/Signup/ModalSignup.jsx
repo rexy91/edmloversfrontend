@@ -38,9 +38,11 @@ export class ModalSignup extends Component{
       )
     })
     .then(res => res.json())
-    .then(console.log)
+    .then(signedUpUser => {
+        
+    })
   }
-      
+
    render(){ return(
         <Modal trigger={<Button>Sign Up</Button>} centered={false}>
           <Modal.Header>Welcome</Modal.Header>
