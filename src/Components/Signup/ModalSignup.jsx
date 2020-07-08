@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { Button, Header, Image, Modal, Form, Checkbox} from 'semantic-ui-react'
+import {withRouter} from 'react-router'
 import swal from 'sweetalert'
 
 export class ModalSignup extends Component{
@@ -39,13 +40,13 @@ export class ModalSignup extends Component{
       )
     })
     .then(res => res.json())
-    .then(newSignup => {
-      if(newSignup.error){
-          swal(newSignup.error)
+    .then(newSignupUser => {
+      if(newSignupUser.error){
+          swal(newSignupUser.error)
       }
       else{
           swal('Signup Completed')
-          
+          this.props.history.push(`/profile/${newSignupUser.id}`)
       }
     })
   }
@@ -79,4 +80,4 @@ export class ModalSignup extends Component{
       }
 }
 
-export default ModalSignup
+export default withRouter(ModalSignup)
