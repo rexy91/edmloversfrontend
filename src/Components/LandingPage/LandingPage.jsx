@@ -8,8 +8,7 @@ export class LandingPage extends Component{
     render(){
         return(
             <div>
-                <h1> Title gi</h1>
-                <h1> Landing Page</h1>
+                <h1> Social Media App</h1>
                 <ModalLogin/>
                 <ModalSignup/>
             </div>

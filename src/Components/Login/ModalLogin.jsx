@@ -35,7 +35,7 @@ const ModalLogin = () => {
   }
 
   return(
-  <Modal trigger={<Button>Login</Button>} centered={false}>
+  <Modal trigger={<span>Login</span>} centered={false}>
     <Modal.Header>Please Login</Modal.Header>
     <Modal.Content>
         <Form onSubmit={submitLogin}>

@@ -53,7 +53,7 @@ export class ModalSignup extends Component{
   }
 
    render(){ return(
-        <Modal trigger={<Button>Sign Up</Button>} centered={false}>
+    <Modal trigger={<span>Sign Up</span>} centered={false}>
           <Modal.Header>Welcome</Modal.Header>
           <Modal.Content>
               <Form onSubmit={this.submitSignup}>
