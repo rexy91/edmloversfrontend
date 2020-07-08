@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { Button, Header, Image, Modal, Form, Checkbox} from 'semantic-ui-react'
+import swal from 'sweetalert'
 
 export class ModalSignup extends Component{
 
@@ -38,8 +39,14 @@ export class ModalSignup extends Component{
       )
     })
     .then(res => res.json())
-    .then(signedUpUser => {
-        
+    .then(newSignup => {
+      if(newSignup.error){
+          swal(newSignup.error)
+      }
+      else{
+          swal('Signup Completed')
+          
+      }
     })
   }
 

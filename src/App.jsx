@@ -5,7 +5,7 @@ import LandingPage from './Components/LandingPage/LandingPage'
 class App extends Component{
   
   componentDidMount(){
-      console.log(localStorage.getItem())
+      
   }
   render(){
       return(
