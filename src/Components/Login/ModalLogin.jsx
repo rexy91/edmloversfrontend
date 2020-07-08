@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { Button, Header, Image, Modal, Form, Checkbox} from 'semantic-ui-react'
-
+import swal from 'sweetalert'
 const ModalLogin = () => {
   const [userName, setUsername] = useState('')
   const [passWord, setPassword] = useState('')
@@ -25,11 +25,10 @@ const ModalLogin = () => {
     .then(res => res.json())
     .then(respond => {
       if (respond.error){
-        alert(respond.error)
+        swal('',`${respond.error}`,'error')
       }
       else{
-        // redux to store user
-        
+          
       }
     })
   }
@@ -45,7 +44,7 @@ const ModalLogin = () => {
         </Form.Field>
         <Form.Field>
           <label>Password</label>
-          <input placeholder='Enter password' name='password' onChange={e => setPassword(e.target.value)} value={passWord}  />
+          <input placeholder='Enter password' name='password' type = 'password' onChange={e => setPassword(e.target.value)} value={passWord}  />
         </Form.Field>
         <Form.Field>
           <Checkbox label='I agree to the Terms and Conditions' />
