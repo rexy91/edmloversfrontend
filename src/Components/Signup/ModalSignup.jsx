@@ -42,7 +42,8 @@ export class ModalSignup extends Component{
     .then(res => res.json())
     .then(newSignupUser => {
       if(newSignupUser.error){
-          swal(newSignupUser.error)
+          const errorMessage = newSignupUser.error
+          swal(`${errorMessage}`)
       }
       else{
           swal('Signup Completed')
