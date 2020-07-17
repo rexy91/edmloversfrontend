@@ -3,13 +3,16 @@ import { Button, Header, Image, Modal, Form, Checkbox} from 'semantic-ui-react'
 import {withRouter} from 'react-router'
 import swal from 'sweetalert'
 
+// Redux Actions
+import {connect} from 'react-redux'
+import {saveUserToState} from '../../Redux/actions'
+
 export class ModalSignup extends Component{
 
   state={
     username:'',
     password:''
   }
-
 
   // Class component function doenst need a identifier.
   handleAllchange=(e)=>{
@@ -47,7 +50,8 @@ export class ModalSignup extends Component{
       }
       else{
           swal('Signup Completed')
-          this.props.history.push(`/profile/${newSignupUser.id}`)
+          this.props.saveUserToState(newSignupUser)   
+          this.props.history.push(`profile/${newSignupUser.id}`)
       }
     })
   }
@@ -81,4 +85,4 @@ export class ModalSignup extends Component{
       }
 }
 
-export default withRouter(ModalSignup)
+export default connect(null, {saveUserToState})(withRouter(ModalSignup))

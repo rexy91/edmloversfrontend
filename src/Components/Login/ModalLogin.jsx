@@ -1,7 +1,12 @@
 import React, {useState} from 'react'
 import { Button, Header, Image, Modal, Form, Checkbox} from 'semantic-ui-react'
+import {withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
+
 import swal from 'sweetalert'
-const ModalLogin = () => {
+import { saveUserToState } from '../../Redux/actions'
+
+const ModalLogin = (props) => {
   const [userName, setUsername] = useState('')
   const [passWord, setPassword] = useState('')
 
@@ -28,7 +33,14 @@ const ModalLogin = () => {
         swal('',`${respond.error}`,'error')
       }
       else{
-          
+          const user = respond.user
+          const token = respond.token
+          console.log(user)
+          //Set token to local storage on browser
+          localStorage.setItem('token', token)
+          swal('','Welcome Back', 'success')
+          props.saveUserToState(user)
+          props.history.push(`profile/${user.id}`)
       }
     })
   }
@@ -55,4 +67,4 @@ const ModalLogin = () => {
   </Modal>)
 }
 
-export default ModalLogin
+export default connect(null, {saveUserToState} )(withRouter(ModalLogin))

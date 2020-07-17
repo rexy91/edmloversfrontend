@@ -23,14 +23,12 @@ class App extends Component{
       })
       .then(r => r.json())
       .then(resp => {
-        console.log('app.js')
         if (resp.token) {
           localStorage.setItem('token',resp.token)
           this.props.saveUserToState(resp)
         }
       })
-    }
-  }
+    }}
 
   render(){
       return(
@@ -44,6 +42,5 @@ class App extends Component{
       )
   }
 }
-
 
 export default connect(null, {saveUserToState})(App)

@@ -5,9 +5,9 @@ const initialState = {
     switch (action.type) {
 
       case 'SAVE_USER_TO_STATE':
-          const user = action.payload.user
+          // Action.payload is the user.
           return{
-              ...state,user
+              ...state, user:action.payload 
           }
       
       default:
