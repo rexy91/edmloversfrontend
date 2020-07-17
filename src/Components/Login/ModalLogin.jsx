@@ -11,6 +11,7 @@ const ModalLogin = (props) => {
   const [passWord, setPassword] = useState('')
 
   const submitLogin = (e) => {
+    console.log('form Submitted')
     const username = e.target.username.value
     const password = e.target.password.value
     e.preventDefault()
