@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux'
 export default function Profilepage() {
 
     // Agrument of the callback is the current Redux state, just like mstp.
-    const user = useSelector(state => console.log(state.userReducer))
+    // const user = useSelector(state => console.log(state.userReducer))
 
      return (
         <div>

@@ -9,9 +9,15 @@ import { saveUserToState } from '../../Redux/actions'
 const ModalLogin = (props) => {
   const [userName, setUsername] = useState('')
   const [passWord, setPassword] = useState('')
+  const [modalOpen, setmodalOpen] = useState('')
+
+  // With functional component, somehow when modalOpen state is empty string, modal will not popped up.
+  // So I set modalOpen state to be empty when i want the form to be closed, and vise versa.
+  const handleOpen = () => {
+      setmodalOpen('true')  }
 
   const submitLogin = (e) => {
-    console.log('form Submitted')
+    setmodalOpen('')
     const username = e.target.username.value
     const password = e.target.password.value
     e.preventDefault()
@@ -34,9 +40,9 @@ const ModalLogin = (props) => {
         swal('',`${respond.error}`,'error')
       }
       else{
+          
           const user = respond.user
           const token = respond.token
-          console.log(user)
           //Set token to local storage on browser
           localStorage.setItem('token', token)
           swal('','Welcome Back', 'success')
@@ -47,8 +53,12 @@ const ModalLogin = (props) => {
   }
 
   return(
-  <Modal trigger={<span>Login</span>} centered={false}>
-    <Modal.Header>Please Login</Modal.Header>
+    <div>
+  <Modal 
+  trigger={<span onClick = {handleOpen}>Login</span>}  centered={false} 
+  open={modalOpen}
+  >
+    <Modal.Header >Please Login</Modal.Header >
     <Modal.Content>
         <Form onSubmit={submitLogin}>
         <Form.Field>
@@ -65,7 +75,11 @@ const ModalLogin = (props) => {
         <Button type='submit'>Submit</Button>
       </Form>
     </Modal.Content>
-  </Modal>)
+  </Modal>
+  </div>)
+  
 }
 
 export default connect(null, {saveUserToState} )(withRouter(ModalLogin))
+
+
