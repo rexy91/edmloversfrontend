@@ -15,6 +15,8 @@ const ModalLogin = (props) => {
   // So I set modalOpen state to be empty when i want the form to be closed, and vise versa.
   const handleOpen = () => {
       setmodalOpen('true')  }
+    
+  const handleClose = () => setmodalOpen('')
 
   const submitLogin = (e) => {
     setmodalOpen('')
@@ -73,6 +75,7 @@ const ModalLogin = (props) => {
           <Checkbox label='I agree to the Terms and Conditions' />
         </Form.Field>
         <Button type='submit'>Submit</Button>
+        <Button onClick={handleClose}>Close</Button>
       </Form>
     </Modal.Content>
   </Modal>

@@ -32,6 +32,11 @@ export class ModalSignup extends Component{
     })
   }
 
+  handleClose= () => {
+    this.setState({
+      modalOpen:''
+    })
+  }
   submitSignup = (e) => {
     e.preventDefault()
     this.setState({
@@ -60,8 +65,9 @@ export class ModalSignup extends Component{
       }
       else{
           swal('Signup Completed')
-          this.props.saveUserToState(newSignupUser)   
-          this.props.history.push(`profile/${newSignupUser.id}`)
+          localStorage.setItem('token', newSignupUser.token)
+          this.props.saveUserToState(newSignupUser.user)   
+          this.props.history.push(`profile/${newSignupUser.user.id}`)
       }
     })
   }
@@ -90,6 +96,7 @@ export class ModalSignup extends Component{
                 <Checkbox label='I agree to the Terms and Conditions' />
               </Form.Field>
               <Button type='submit'>Signup</Button>
+              <Button type='' onClick={this.handleClose}>Close</Button>
             </Form>
           </Modal.Content>
         </Modal>
