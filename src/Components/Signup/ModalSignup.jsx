@@ -11,7 +11,8 @@ export class ModalSignup extends Component{
 
   state={
     username:'',
-    password:''
+    password:'',
+    modalOpen:''
   }
 
   // Class component function doenst need a identifier.
@@ -25,8 +26,17 @@ export class ModalSignup extends Component{
     })
   }
 
+  handleOpen = () => {
+    this.setState({
+      modalOpen:'open'
+    })
+  }
+
   submitSignup = (e) => {
     e.preventDefault()
+    this.setState({
+      modalOpen:'' // set empty to close form
+    })
     const username = e.target.username.value
     const password = e.target.password.value
     fetch(`http://localhost:3000/users`, {
@@ -57,7 +67,9 @@ export class ModalSignup extends Component{
   }
 
    render(){ return(
-    <Modal trigger={<span>Sign Up</span>} centered={false}>
+    <Modal trigger={<span onClick = {this.handleOpen}>Sign Up</span>} centered={false}
+      open={this.state.modalOpen}
+      >
           <Modal.Header>Welcome</Modal.Header>
           <Modal.Content>
               <Form onSubmit={this.submitSignup}>
