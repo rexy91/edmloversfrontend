@@ -8,18 +8,24 @@ const NewPost = () => {
     
     const [photos, setPhotos] = useState([])
     
-
     const handlePhotoUpload = (e) => {
-            setPhotos(e.target.files)
+            setPhotos([...e.target.files])
             // Here photos will still be empty, but outside this function photo will be updated.
             console.log(photos)
+            handleChosenPhotos()
     }
     
+    console.log(photos)
     const handleChosenPhotos = () => {
         // e.target.file is a file lists, not an array, but we can spread and store in an array.
         // With ES6 syntax.
-        
+        console.log(photos)
+        const chosenFilesArray = [...photos]
+        console.log(chosenFilesArray)
     }
+
+    console.log(newpostGif)
+
     return(
         <Modal trigger={<Button>New Post</Button>} centered={false} class='newpostModal'>
             <Modal.Header>Post something!</Modal.Header>

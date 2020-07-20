@@ -1,0 +1,17 @@
+.container1{
+    display: flex
+    ;
+    .box1{
+        height: 30vh;
+        width: 30%;
+        border: 1px solid #ccc;
+        background-color: #fffaf0;
+    }
+
+    .box2{
+        height: 30vh;
+        width: 70%;
+        border: 1px solid #ccc;
+        background-color: beige;
+    }
+}
