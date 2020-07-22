@@ -1,11 +1,22 @@
+
+
 .container1{
-    display: flex
-    ;
+    display: flex;
+    
     .box1{
+        text-align: center;
         height: 30vh;
         width: 30%;
         border: 1px solid #ccc;
         background-color: #fffaf0;
+
+
+        button{
+            padding: 0px;
+            width: 90px;
+            margin-right: -80px;
+            float: left;
+        }
     }
 
     .box2{
@@ -14,4 +25,12 @@
         border: 1px solid #ccc;
         background-color: beige;
     }
+}
+
+#profilePicIcon{
+    margin-top: 5px;
+    height: 160px;
+    width: 140px;
+    border-radius: 40%;
+    justify-content: center;
 }
