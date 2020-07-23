@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import swal from 'sweetalert'
 //Redux
 import{connect} from 'react-redux'
+import {logoutUser} from '../../Redux/actions'
 
 import './Navbar.scss'
 // Components
@@ -16,6 +17,7 @@ class Navbar extends Component {
         localStorage.clear()
         this.props.history.push('/')
         swal('','You have been logged out.','success')
+        this.props.logoutUser()
     }
 
     logOutOptionTenery = () =>{
@@ -63,4 +65,4 @@ const mstp = (state) => {
     }
 }
 
-export default connect(mstp,null)(withRouter(Navbar))
+export default connect(mstp,{logoutUser})(withRouter(Navbar))

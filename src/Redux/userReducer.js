@@ -17,6 +17,11 @@ const initialState = {
           return{
             ...state, allUsers:action.payload
           }
+
+      case 'LOGOUT_USER':
+      return {
+          ...state, user:{}
+      }
       
       default:
         return state;
