@@ -11,6 +11,12 @@ const initialState = {
           return{
               ...state, user:action.payload.user
           }
+
+      case 'SAVE_ALL_USERS':
+      
+          return{
+            ...state, allUsers:action.payload
+          }
       
       default:
         return state;

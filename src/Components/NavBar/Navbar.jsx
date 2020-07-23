@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom'
 import {Link} from 'react-router-dom'
-
+import swal from 'sweetalert'
 //Redux
 import{connect} from 'react-redux'
 
@@ -12,8 +12,14 @@ import ModalSignup from '../Signup/ModalSignup'
 
 class Navbar extends Component {
 
+    handleLogout = () => {
+        localStorage.clear()
+        this.props.history.push('/')
+        swal('','You have been logged out.','success')
+    }
+
     logOutOptionTenery = () =>{
-      return  localStorage.getItem('token') ? <li>Log Out</li> : null
+      return  localStorage.getItem('token') ? <li onClick={this.handleLogout}>Log Out</li> : null
     }
     logInOptionTenery = () => {
         return  localStorage.getItem('token') ? null:<li><ModalLogin/></li>

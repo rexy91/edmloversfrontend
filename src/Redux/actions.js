@@ -5,4 +5,10 @@ export const saveUserToState = (userObject) => {
     }
 }
 
-
+export const saveAllUsers = (usersArray) => {
+    
+    return {
+        type:'SAVE_ALL_USERS',
+        payload: usersArray
+    }
+}

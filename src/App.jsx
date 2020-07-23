@@ -5,7 +5,7 @@ import {Switch,Route,Link} from "react-router-dom";
 
 //Redux
 import {connect} from 'react-redux'
-import {saveUserToState} from './Redux/actions'
+import {saveUserToState, saveAllUsers} from './Redux/actions'
 
 // Components
 import Searchbar from './Components/SearchBar/Searchbar'
@@ -29,7 +29,15 @@ class App extends Component{
           this.props.saveUserToState(resp)
         }
       })
-    }}
+    }
+  
+    //Fetch all users:
+    fetch('http://localhost:3000/users')
+    .then(res => res.json())
+    .then(users => {
+        this.props.saveAllUsers(users)
+    })
+  }
 
   render(){
       return(
@@ -45,4 +53,4 @@ class App extends Component{
   }
 }
 
-export default connect(null, {saveUserToState})(App)
+export default connect(null, {saveUserToState, saveAllUsers})(App)
