@@ -29,7 +29,7 @@ class Navbar extends Component {
         this.props.history.push('/')
     }
     directProfile = () => {
-        const {id} =  this.props.currentUser.user
+        const {id} =  this.props.currentUser
         this.props.history.push(`/profile/${id}`)
     }
     
