@@ -39,11 +39,14 @@ class App extends Component{
     })
   }
 
+    // searchBarTernery = () => {
+    //   return localStorage.getItem('token') ? <Searchbar/> : null
+    // }
   render(){
       return(
         <div>
           <Navbar/>
-          <Searchbar/>
+          {/* {this.searchBarTernery()} */}
           <Switch>
               <Route exact path = '/' component = { LandingPage } />
               <Route exact path = '/profile/:id' component={ Profilepage } />
