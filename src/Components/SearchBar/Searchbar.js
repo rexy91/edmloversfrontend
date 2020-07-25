@@ -1,6 +1,9 @@
 import React from 'react'
 import './Searchbar.scss'
 
+//Components
+import LandingPageUserCard from '../LandingPageUsers/LandingPageUserCard'
+
 export default function Searchbar() {
     return (
             <div class="wrap">
@@ -12,14 +15,7 @@ export default function Searchbar() {
                 </div>
 
                 <div class='usersScollWrapper'>
-                        <div class='item'> user 1 </div>
-                        <div class='item'> user 2</div>
-                        <div class='item'> user 3</div>
-                        <div class='item'> user 4</div>
-                        <div class='item'> user 5</div>
-                        <div class='item'> user 6</div>
-                        <div class='item'> user 7</div>
-                        <div class='item'> user 8</div>
+                        <LandingPageUserCard/>
                 </div>
             </div>
     )
