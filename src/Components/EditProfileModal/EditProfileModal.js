@@ -17,6 +17,9 @@ const EditProfileModal = (props) => {
     
   const handleClose = () => setmodalOpen('')
 
+  const profileOnchange = (e) => {
+      console.log(e.target.files[0])
+  }
 
   return(
     <div>
@@ -28,8 +31,8 @@ const EditProfileModal = (props) => {
     <Modal.Content>
         <Form>
         <Form.Field>
-          <label>Username</label>
-
+          <label>Profile Pic</label>
+          <input type='file' onChange={profileOnchange}></input>
         </Form.Field>
         <Form.Field>
           <label>Password</label>
