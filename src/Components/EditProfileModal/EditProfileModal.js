@@ -21,6 +21,11 @@ const EditProfileModal = (props) => {
       console.log(e.target.files[0])
   }
 
+  const submitEditProfile = (e) => {
+      e.preventDefault()
+      console.log('form submitted')
+  }
+
   return(
     <div>
   <Modal 
@@ -29,7 +34,7 @@ const EditProfileModal = (props) => {
   >
     <Modal.Header >Please Login</Modal.Header >
     <Modal.Content>
-        <Form>
+        <Form onSubmit = {submitEditProfile}>
         <Form.Field>
           <label>Profile Pic</label>
           <input type='file' onChange={profileOnchange}></input>
