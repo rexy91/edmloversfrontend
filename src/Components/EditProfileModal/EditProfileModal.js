@@ -23,7 +23,8 @@ const EditProfileModal = (props) => {
 
   const submitEditProfile = (e) => {
       e.preventDefault()
-      console.log('form submitted')
+      console.log(e.target.profilePicUpload.value)
+      
   }
 
   return(
@@ -37,7 +38,7 @@ const EditProfileModal = (props) => {
         <Form onSubmit = {submitEditProfile}>
         <Form.Field>
           <label>Profile Pic</label>
-          <input type='file' onChange={profileOnchange}></input>
+          <input type='file' name='profilePicUpload' onChange={profileOnchange}></input>
         </Form.Field>
         <Form.Field>
           <label>Password</label>
