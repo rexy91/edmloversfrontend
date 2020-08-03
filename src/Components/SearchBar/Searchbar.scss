@@ -3,13 +3,15 @@
 }
 
 .usersScollWrapper{
-
     max-height: 120px;
     border: solid 1px #ddd;
     display: flex;
     overflow-x: auto;
-    width: 50%;
+    
     justify-content: center;
+    margin-right: 10%;
+    margin-left: 10%;
+
     // overflow-wrap: break-word;
 
     .item{
