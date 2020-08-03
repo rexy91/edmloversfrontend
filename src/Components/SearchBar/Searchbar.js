@@ -1,5 +1,6 @@
 import React from 'react'
 import './Searchbar.scss'
+import Carousel from 'react-elastic-carousel'
 
 //Redux
 import {useSelector} from 'react-redux'
@@ -11,6 +12,13 @@ export default function Searchbar() {
     // Get all users from redux store
     // State consists userReducer and followerReducer, since we combined reducers.
 
+    const breakPoints = [
+        {width:1, itemsToShow:1},
+        {width:550, itemsToShow:2},
+        {width:768, itemsToShow:3},
+        {width:1200, itemsToShow:4},
+    ]
+    
     const allUsers = useSelector(state => state.userReducer.allUsers)
 
     
