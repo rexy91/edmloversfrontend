@@ -16,16 +16,15 @@ export default function Searchbar() {
         {width:1, itemsToShow:1},
         {width:550, itemsToShow:2},
         {width:768, itemsToShow:3},
-        {width:1200, itemsToShow:4},
+        {width:1200, itemsToShow:3},
     ]
-    
+
     const allUsers = useSelector(state => state.userReducer.allUsers)
 
     
     // React renders components first before componentDidmount, so allUsers will first be undefined.
 
     const usersMapper = allUsers?.map(singleUser => {
-        console.log(singleUser)
         return <LandingPageUserCard singleUser = {singleUser} key={singleUser.id}/>
     })
     return (
@@ -38,7 +37,19 @@ export default function Searchbar() {
                 </div>
 
                 <div class='usersScollWrapper'>
-                        {usersMapper}
+                        
+                </div>
+                
+                <div className='carousel-react'>
+                        <Carousel breakPoints={breakPoints}>        
+                                {/* <LandingPageUserCard/>
+                                <LandingPageUserCard/>
+                                <LandingPageUserCard/>
+                                <LandingPageUserCard/>
+                                <LandingPageUserCard/>                 */}
+                                {usersMapper}
+                                
+                        </Carousel>
                 </div>
             </div>
     )
