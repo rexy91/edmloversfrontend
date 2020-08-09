@@ -39,16 +39,14 @@ export default function Searchbar() {
                 <div class='usersScollWrapper'>
                         
                 </div>
-                
                 <div className='carousel-react'>
                         <Carousel breakPoints={breakPoints}>        
-                                {/* <LandingPageUserCard/>
                                 <LandingPageUserCard/>
                                 <LandingPageUserCard/>
                                 <LandingPageUserCard/>
-                                <LandingPageUserCard/>                 */}
-                                {usersMapper}
-                                
+                                <LandingPageUserCard/>
+                                <LandingPageUserCard/>
+
                         </Carousel>
                 </div>
             </div>
