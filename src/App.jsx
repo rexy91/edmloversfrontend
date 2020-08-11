@@ -8,6 +8,7 @@ import {connect} from 'react-redux'
 import {saveUserToState, saveAllUsers} from './Redux/actions'
 
 // Components
+import FollowingsPage from './Components/FollowingsPage/FollowingsPage'
 import Searchbar from './Components/SearchBar/Searchbar'
 import Profilepage from './Components/Profile/Profilepage'
 import Navbar from './Components/NavBar/Navbar'
@@ -50,6 +51,7 @@ class App extends Component{
           <Switch>
               <Route exact path = '/' component = { LandingPage } />
               <Route exact path = '/profile/:id' component={ Profilepage } />
+              <Route exact path = '/profile/:id/followings' component = { FollowingsPage }/>
           </Switch>
         </div>
       )
