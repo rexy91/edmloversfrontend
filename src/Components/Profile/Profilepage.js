@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState} from 'react'
 import {useSelector} from 'react-redux'
+import {withRouter} from 'react-router-dom'
 
 import NewPost from './NewPost/NewPost'
 import PostContent from './PostContent/PostContent'
@@ -10,12 +11,17 @@ import '../Profile/Profilepage.scss'
 
 import testProfilePic from '../../photos/IMG_3928.jpg'
 
-export default function Profilepage() {
+function Profilepage(props) {
 
     const [profilePic, setProfilePic] = useState({})
 
     // const currentUser = useSelector(state => state.userReducer.user)
     const currentUser = useSelector(state => state.userReducer.user)
+
+
+    const followingsPage = () => {
+          
+    }
 
     const editProfilePic = () => {
         fetch(`http://localhost:3000/uploadProfilepic`, {
@@ -52,7 +58,7 @@ export default function Profilepage() {
                             <EditProfileModal/>
                             <br/>
                             <button>290 Fllowers</button>
-                            <button>100 Fllowings</button>
+                            <button onClick={followingsPage}>100 Fllowings</button>
                             <p id='profileUsername'>{currentUser?.username}</p> 
                             <p id='bio' >About: kdsfldjslfjslfjlsdjflsjkhkhkjhkhkhkhhkhkhkjhkhjljlkjlkjkjjjljlkjlkkljljljlkdfdsjflsdl jsdlfj jjljljjlkjljkljjsdlfjs jlsdjf fjsdlfjlsdjflsdj</p>
                         </div>
@@ -63,6 +69,8 @@ export default function Profilepage() {
     )
 }
 
+
+export default withRouter(Profilepage)
 
 
 

@@ -46,7 +46,7 @@ export default function Searchbar() {
                                 <LandingPageUserCard/>
                                 <LandingPageUserCard/>
                                 <LandingPageUserCard/>
-
+                                
                         </Carousel>
                 </div>
             </div>
