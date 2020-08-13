@@ -19,10 +19,11 @@ function Profilepage(props) {
     const currentUser = useSelector(state => state.userReducer.user)
 
     const followingsPage = () => {
-          const id = currentUser.id 
-          props.history.push(`profile/${id}/followings`)
-    }
 
+          const id = currentUser.id
+          props.history.push(`/${id}/followings`)
+    }
+    
     const editProfilePic = () => {
         fetch(`http://localhost:3000/uploadProfilepic`, {
             method:'POST',
