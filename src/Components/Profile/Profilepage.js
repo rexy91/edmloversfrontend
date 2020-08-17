@@ -18,6 +18,11 @@ function Profilepage(props) {
     // const currentUser = useSelector(state => state.userReducer.user)
     const currentUser = useSelector(state => state.userReducer.user)
 
+    const followAction = () => {
+        // Get current user, and the user of the profile page(the one being followed).
+
+    }
+
     const followingsPage = () => {
 
           const id = currentUser.id
@@ -60,6 +65,8 @@ function Profilepage(props) {
                             <br/>
                             <button>290 Fllowers</button>
                             <button onClick={followingsPage}>100 Fllowings</button>
+                            {/* If current user goes to his own profile page, follow button shouldn't be there.  */}
+                            <button onClick={followAction}>Follow</button>
                             <p id='profileUsername'>{currentUser?.username}</p> 
                             <p id='bio' >About: kdsfldjslfjslfjlsdjflsjkhkhkjhkhkhkhhkhkhkjhkhjljlkjlkjkjjjljlkjlkkljljljlkdfdsjflsdl jsdlfj jjljljjlkjljkljjsdlfjs jlsdjf fjsdlfjlsdjflsdj</p>
                         </div>
