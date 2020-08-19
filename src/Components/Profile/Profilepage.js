@@ -20,7 +20,10 @@ function Profilepage(props) {
 
     const followAction = () => {
         // Get current user, and the user of the profile page(the one being followed).
-
+        // Get currentUser 's id
+        const currentUserId = currentUser.id
+        console.log(currentUserId)
+        
     }
 
     const followingsPage = () => {
@@ -49,7 +52,6 @@ function Profilepage(props) {
     }
 
     const profileInputOnchange = () => {}
-
      return (
         <div className='profilePage'>
             <h3>Profile Page</h3>
